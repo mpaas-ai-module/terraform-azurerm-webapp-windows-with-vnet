@@ -141,3 +141,21 @@ variable "use_32_bit_worker" {
   description = "Specifies whether the Azure Windows Web App should run using a 32-bit worker process instead of the default 64-bit worker process."
   default     = false
 }
+
+# --- Added from old repo (missing in new as of comparison) ---
+variable "client_certificate_enabled" {
+  description = "Specifies whether client certificate authentication is enabled for the Windows Web App."
+  type        = bool
+}
+
+# --- Added from old repo (missing in new as of comparison) ---
+variable "client_certificate_exclusion_paths" {
+  description = "List of URL paths that are excluded from client certificate authentication."
+  type        = string
+}
+
+# --- Added from old repo (missing in new as of comparison) ---
+variable "client_certificate_mode" {
+  description = "Specifies how the Windows Web App handles client certificates (e.g., Required, Optional, or OptionalInteractiveUser)."
+  type        = string
+}
