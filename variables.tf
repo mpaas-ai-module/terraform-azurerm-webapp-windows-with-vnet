@@ -73,28 +73,28 @@ variable "tomcat_version" {
 
 
 variable "vnet_route_all_enabled" {
-  type = bool
+  type        = bool
   description = "enable all outbound"
 }
 variable "physical_path" {
-    type =  string
-    description = "value"
-  
+  type        = string
+  description = "value"
+
 }
 variable "virtual_path" {
-    type = string
-    description = "value"
-  
+  type        = string
+  description = "value"
+
 }
 variable "physical_path1" {
-    type =  string
-    description = "value"
-  
+  type        = string
+  description = "value"
+
 }
 variable "virtual_path1" {
-    type = string
-    description = "value"
-  
+  type        = string
+  description = "value"
+
 }
 
 
@@ -123,15 +123,39 @@ variable "python" {
 }
 variable "https_only" {
   type = bool
-  
+
 }
 
 variable "virtual_network_subnet_id" {
-  type = string
-  description = "vnet link" 
+  type        = string
+  description = "vnet link"
 }
 variable "ip_restriction_default_action" {
-  type = string
+  type    = string
   default = "Deny"
-  
+
+}
+
+variable "use_32_bit_worker" {
+  type        = bool
+  description = "Specifies whether the Azure Windows Web App should run using a 32-bit worker process instead of the default 64-bit worker process."
+  default     = false
+}
+
+# --- Added from old repo (missing in new as of comparison) ---
+variable "client_certificate_enabled" {
+  description = "Specifies whether client certificate authentication is enabled for the Windows Web App."
+  type        = bool
+}
+
+# --- Added from old repo (missing in new as of comparison) ---
+variable "client_certificate_exclusion_paths" {
+  description = "List of URL paths that are excluded from client certificate authentication."
+  type        = string
+}
+
+# --- Added from old repo (missing in new as of comparison) ---
+variable "client_certificate_mode" {
+  description = "Specifies how the Windows Web App handles client certificates (e.g., Required, Optional, or OptionalInteractiveUser)."
+  type        = string
 }
